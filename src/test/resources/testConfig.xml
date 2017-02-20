@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="calculatorTetSute">
+    <test name="additionOperationTest">
+        <classes>
+            <class name="com.epam.calculator.operation.CalculatorAdditionOperationTest"/>
+        </classes>
+    </test>
+    <test name="divideOperationTest">
+        <parameter name="decimalPattern" value="#.###"/>
+        <classes>
+            <class name="com.epam.calculator.operation.CalculatorDivideOperationTest"/>
+        </classes>
+    </test>
+
+</suite>
