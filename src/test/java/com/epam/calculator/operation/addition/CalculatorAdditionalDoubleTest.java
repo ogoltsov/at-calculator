@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class CalculatorAdditionalDoubleTest extends CalculatorAdditionTest {
 
-    @Test(groups = "additionOperationTest",dataProvider = "doubleAdditionalDataProvider")
+    @Test(dataProvider = "doubleAdditionalDataProvider", groups = {"additionOperation"})
     public void doubleAdditionTest(double a, double b, double expectedResult) {
         double actualResult = getCalculator().addition(a, b);
 

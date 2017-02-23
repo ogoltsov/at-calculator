@@ -2,6 +2,7 @@ package com.epam.calculator.operation.addition;
 
 import com.epam.calculator.operation.CalculatorTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class CalculatorAdditionTest extends CalculatorTest {
 

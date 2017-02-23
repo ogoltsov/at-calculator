@@ -4,8 +4,8 @@ import org.testng.annotations.Test;
 
 public class CalculatorDivideIntTest extends CalculationDivideTest {
 
-    @Test(dependsOnGroups = "additionOperationTest", groups = "divideOperationTest")
-    public void some(){
+    @Test(groups = {"divideOperation"})
+    public void divideIntNumbersTest(){
         System.out.println("SOME");
     }
 
