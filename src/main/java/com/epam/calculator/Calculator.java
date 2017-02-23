@@ -11,12 +11,12 @@ public class Calculator {
     }
 
     public double divide(double a, double b) {
-        if (b == 0) throw new NumberFormatException("Second argument should'n br equal 0");
+        if (b == 0) throw new NumberFormatException("Second argument should'n be equal 0");
         else return a / b;
     }
 
     public double divide(int a, int b) {
-        if (b == 0) throw new NumberFormatException("Second argument should'n br equal 0");
+        if (b == 0) throw new NumberFormatException("Second argument should'n be equal 0");
         else return a / b;
     }
 

@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="calculatorTetSute">
+    <test name="additionalNumbers">
+        <groups>
+            <run>
+                <include name="additionOperationTest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.calculator.operation.addition.CalculatorAdditionalIntTest"/>
+            <class name="com.epam.calculator.operation.addition.CalculatorAdditionalDoubleTest"/>
+            <class name="com.epam.calculator.operation.addition.CalculatorAdditionTest"/>
+        </classes>
+    </test>
+
+<test name="divideNumbers">
+        <groups>
+            <run>
+                <include name="divideOperationTest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.calculator.operation.divide.CalculatorDivideIntTest"/>
+            <class name="com.epam.calculator.operation.divide.CalculationDivideTest"/>
+        </classes>
+    </test>
+
+
+
+</suite>
