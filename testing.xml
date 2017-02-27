@@ -1,0 +1,146 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="calculatorTetSuite">
+    <test name="arithmeticOperationTest" parallel="true" thread-count="5">
+        <groups>
+            <define name="additionOperationTest">
+                <include name="additionOperation"/>
+            </define>
+            <define name="subtractOperationTest">
+                <include name="subtractOperation"/>
+            </define>
+            <define name="divideOperationTest">
+                <include name="divideOperation"/>
+            </define>
+            <define name="multiplyOperationTest">
+                <include name="multiplyOperation"/>
+            </define>
+
+            <run>
+                <include name="additionOperationTest" invocation-numbers="3"/>
+                <include name="subtractOperationTest" invocation-numbers="3"/>
+                <include name="divideOperationTest" invocation-numbers="3"/>
+            </run>
+
+            <dependencies>
+                <group name="subtractOperation" depends-on="additionOperation"/>
+                <group name="divideOperation" depends-on="subtractOperation"/>
+                <group name="multiplyOperation" depends-on="divideOperation"/>
+            </dependencies>
+        </groups>
+
+        <classes>
+            <class name="com.epam.calculator.operation.arithmetic.DivideOperationTest">
+                <methods>
+                    <include name="divideIntNumbersTest"/>
+                    <include name="divideDoubleNumbersTest"/>
+                    <include name="divideIntByZeroNumbersTest"/>
+                    <include name="divideDoubleByZeroNumbersTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.arithmetic.AdditionalOperationTest">
+                <methods>
+                    <include name="doubleAdditionTest"/>
+                    <include name="intAdditionTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.arithmetic.SubtractOperationTest">
+                <methods>
+                    <include name="doubleSubtractTest"/>
+                    <exclude name="intSubtractTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.arithmetic.MultiplyOperationTest">
+                <methods>
+                    <include name="multiplyDoubleNumbersTest"/>
+                    <include name="multiplyIntNumbersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="trigonometricFunctionsTest" parallel="true" thread-count="4">
+        <parameter name="formatPattern" value="#.#####"/>
+        <groups>
+            <define name="TrigonometricFunctionsTest">
+                <include name="trigonometricFunction"/>
+            </define>
+            <define name="TrigonometricBaseFunctions">
+                <include name="trigonometricBaseFunction"/>
+            </define>
+            <define name="TrigonometricCompositeFunction">
+                <include name="trigonometricCompositeFunction"/>
+            </define>
+            <run>
+                <include name="trigonometricFunction"/>
+            </run>
+            <dependencies>
+                <group name="trigonometricCompositeFunction" depends-on="trigonometricBaseFunction"/>
+            </dependencies>
+        </groups>
+        <classes>
+            <class name="com.epam.calculator.operation.trigonometric.SinFunctionTest">
+                <methods>
+                    <include name="initTest"/>
+                    <include name="sinFunctionTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.trigonometric.CosFunctionTest">
+                <methods>
+                    <include name="initTest"/>
+                    <include name="cosFunctionTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.trigonometric.TgFunctionTest">
+                <methods>
+                    <include name="initTest"/>
+                    <include name="tgFunctionTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.trigonometric.CtgFunctionTest">
+                <methods>
+                    <include name="ctgFunctionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="degreeFunctionTest">
+        <groups>
+            <define name="DegreeFunctionTest">
+                <include name="degree"/>
+            </define>
+            <run>
+                <include name="degree"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.calculator.operation.degree.PowFunctionTest">
+                <methods>
+                    <include name="powFunctionTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.calculator.operation.degree.SqrtFunctionTest">
+                <methods>
+                    <include name="sqrtFunctionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="logicalFunctionsTest">
+        <groups>
+            <define name="logicalTest">
+                <include name="logical"/>
+            </define>
+            <run>
+                <include name="logical"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.calculator.operation.logical.IsPositiveNumber"/>
+            <class name="com.epam.calculator.operation.logical.isNegativeNumber"/>
+        </classes>
+    </test>
+
+</suite>
