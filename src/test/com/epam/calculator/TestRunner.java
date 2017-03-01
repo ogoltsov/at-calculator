@@ -11,7 +11,7 @@ import java.io.IOException;
 public class TestRunner {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
         TestNG testing = new TestNG();
-        for (XmlSuite suite : new Parser("./testing.xml").parseToList()) {
+        for (XmlSuite suite : new Parser(".\\src\\test\\resources\\testing.xml").parseToList()) {
             testing.setCommandLineSuite(suite);
         }
         testing.run();

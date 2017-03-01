@@ -2,10 +2,7 @@ package com.epam.calculator.operation.trigonometric;
 
 import com.epam.calculator.CalculatorTest;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -28,7 +25,7 @@ public class CosFunctionTest extends CalculatorTest {
 
     @Parameters(value = {"formatPattern"})
     @BeforeTest
-    public void initTest(String formatPattern) {
+    public void initTest(@Optional String formatPattern) {
         this.formatPattern = formatPattern;
     }
 

@@ -3,6 +3,7 @@ package com.epam.calculator.operation.trigonometric;
 import com.epam.calculator.CalculatorTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -27,7 +28,7 @@ public class CtgFunctionTest extends CalculatorTest {
         };
     }
     @Parameters({"formatPattern"})
-    public CtgFunctionTest(String formatPattern) {
+    public CtgFunctionTest(@Optional String formatPattern) {
         this.formatPattern = formatPattern;
     }
 
